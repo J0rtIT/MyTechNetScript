@@ -37,6 +37,9 @@
    1 JSON file for each log and then the compilation in graph.js.
    Also, it's added a graphYYYYMMDD.html file; this is the one to click on when the script is done with his job.
 .NOTES
+	#version 5.07
+	Updated the bug on the "Last Time Written" of the events not showing correctly
+
 	#Version 4.0
 	Added Get-Help compatibility so that you can use .\Frequencylog.ps1
 	Requires Powershell 3.0 instead of 4 or 5. (it uses Convertfrom-JSON and Convertto-JSON) Cmdlets (https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertfrom-json?view=powershell-5.1)
