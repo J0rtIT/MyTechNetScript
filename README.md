@@ -6,7 +6,6 @@
 | Publish Date | Name  |  URL  | Repository Location | PageViews | PageViews(Max) | PageViews(Avg) | Downloads | Downloads(Max) | Downloads(Avg)  |  
 |     :---:    | :---: | :---: |          :---:      | :---:     |  :---:         |  :---:         | :---:     |  :---:         |  :---:          |
 | 6/21/2019  | Get Bearer Token to use with Unsplash API, fast and simple  |   [Bearer Token Script](https://gallery.technet.microsoft.com/Get-Bearer-Token-to-use-360f9ae2) | [local copy](/Photography/Get-Bearer-Token-to-use-360f9ae2.md) | 0 | 0| 0|0|0|0
-| Publish Date | Name  |  URL  | Repository Location | PageViews | PageViews(Max) | PageViews(Avg) | Downloads | Downloads(Max) | Downloads(Avg)  |  
 | 3/26/2016 | Add-Suffixes-to-Active-cfa9bb48_stats.csv  |  https://gallery.technet.microsoft.com/Add-Suffixes-to-Active-cfa9bb48  | Repository Location | 1181 | 28 | 0.819644369178662 | 1181 | 4 | 0.346316680779001 |  
 | 1/27/2015 | Auditing-Exchange-07c35e83_stats.csv  |  https://gallery.technet.microsoft.com/Auditing-Exchange-07c35e83  | Repository Location | 1605 | 20 | 0.505919003115265 | 1605 | 6 | 0.461682242990654 |  
 | 1/4/2019 | Canon-CR2-to-JPG-module-087293e7_stats.csv  |  https://gallery.technet.microsoft.com/Canon-CR2-to-JPG-module-087293e7  | Repository Location | 167 | 5 | 0.143712574850299 | 167 | 1 | 0.0239520958083832 |  
