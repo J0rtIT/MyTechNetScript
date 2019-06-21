@@ -1,4 +1,4 @@
-#https://gallery.technet.microsoft.com/Get-Bearer-Token-to-use-360f9ae2
+#https://gallery.technet.microsoft.com/Get-Bearer-Token-to-use-360f9ae2##|
 [Cmdletbinding()]
 param(                                                                          
     [Parameter(Mandatory=$false,ValueFromPipeline=$true,Position=0)]$ClientId =   'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
