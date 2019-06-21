@@ -6,9 +6,6 @@ $FolderProcessFiles = "F:\Stats"
 $downloadFolder =  "D:\Libs\Download"
 
 
-
-
-
 function Create-FolderIfNotExists{
     [Cmdletbinding()]
     Param(
@@ -54,10 +51,6 @@ Foreach($item in gci $downloadFolder -Filter *.csv){
 }
 
 
-
-
-####################
-####################
 $sbuilder= [System.Text.StringBuilder]::new()
 $sbuilder.AppendLine("# Directory / Directorio\n")
 $sbuilder.AppendLine("| Publish Date | Name  |  URL  | Repository Location | PageViews | PageViews(Max) | PageViews(Avg) | Downloads | Downloads(Max) | Downloads(Avg)  |  ")
@@ -66,11 +59,11 @@ $sbuilder.AppendLine("| Publish Date | Name  |  URL  | Repository Location | Pag
 gci -File -Path $FolderProcessFiles | %{
     $csv = Import-Csv $_.FullName
     $StrToMatch = $_.Name.Split('_')[0]
-    $PVstats = $csv | Measure-Object -Property "Page Views" -Sum -Average -Maximum -Minimum
-    $DLstats = $csv | Measure-Object -Property "Downloads" -Sum -Average -Maximum -Minimum
+    $PVstats = $csv | Measure-Object "Page Views" -Sum -Average -Maximum -Minimum
+    $DLstats = $csv | Measure-Object "Downloads" -Sum -Average -Maximum -Minimum
     $PublishDate = $csv | select -first 1 | select -ExpandProperty Date
     $url = $AllFiles | %{ if($_ -like "*$StrToMatch*" -and !($_ -like "#*")){ $_}}
-    $sbuilder.AppendLine("| $PublishDate | $($_.Name)  |  $url  | Repository Location | $($PVstats.Count) | $($PVstats.Maximum) | $($PVstats.Average) | $($DLstats.Count) | $($DLstats.Maximum) | $($DLstats.Average) |  ")
+    $sbuilder.AppendLine("| $PublishDate | $($_.Name)  |  $url  | Repository Location | $($PVstats.SUM) | $($PVstats.Maximum) | $($PVstats.Average) | $($DLstats.SUM) | $($DLstats.Maximum) | $($DLstats.Average) |  ")
 }
 
 $sbuilder.ToString() | Out-File $Readme
