@@ -13,8 +13,8 @@ On unsplash API the token never expires so, once you do it once, you wouldn't ne
 
 You would need the following:
 
-- [Create an account on Unsplash](###Create-an-account-on-unsplash)
-- Create a [new aplication](###How-to-create-a-new-application-on-the-developers-site) on the [developer's site](https://unsplash.com/developers)
+- [Create an account on Unsplash](#Create-an-account-on-unsplash)
+- Create a [new aplication](#How-to-create-a-new-application-on-the-developers-site) on the [developer's site](https://unsplash.com/developers)
 
 ### Create an account on unsplash
 
@@ -28,7 +28,7 @@ Then just fill out or login with facebook
 
 ### How to create a new application on the developers site
 
-Once you have followed the instructions to [Create an account](###Create-an-account-on-unsplash).
+Once you have followed the instructions to [Create an account](#Create-an-account-on-unsplash).
 
 Click here for details on [how to create a new application and prepare it for the script](Create-application)
 
