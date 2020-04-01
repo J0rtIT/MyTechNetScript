@@ -1,14 +1,17 @@
-#https://gallery.technet.microsoft.com/Get-Bearer-Token-to-use-360f9ae2##|
-[Cmdletbinding()]
+﻿[Cmdletbinding()]
 param(                                                                          
     [Parameter(Mandatory=$false,ValueFromPipeline=$true,Position=0)]$ClientId =   'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
-    [Parameter(Mandatory=$false,ValueFromPipeline=$true,Position=1)]$ClientSecret='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+    [Parameter(Mandatory=$false,ValueFromPipeline=$true,Position=1)]$ClientSecret='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+    [Parameter(Mandatory=$false,ValueFromPipeline=$true,Position=2)]$Scope='public',#+read_user+read_photos+write_likes+write_followers+read_collections'
+    [Parameter(Mandatory=$false,ValueFromPipeline=$true,Position=3)]$RedirectUriParam="https://localhost:63437/signin-unsplash"
 )
 
 #Do not change this 
 $global:ClientId = $ClientId    
 $global:clientsecret = $ClientSecret
-$global:RedirectUri = 'https%3A%2F%2Flocalhost%3A63437%2Fsignin-unsplash%2F'
+$global:RedirectUri = $RedirectUriParam
+
+$global:RedirectUri
 
 Function Show-OAuth2Window {
     [cmdletbinding()]
@@ -49,7 +52,7 @@ Function Get-OAuth2Authorization {
     [cmdletbinding()]
     Param (
         #public+read_user+write_user+read_photos+write_photos+write_likes+write_followers+read_collections+write_collections
-        $AuthPage = "https://unsplash.com/oauth/authorize?client_id=$global:clientId&redirect_uri=$global:RedirectUri&response_type=code&scope=public+read_user+read_photos+write_likes+write_followers+read_collections"
+        $AuthPage = "https://unsplash.com/oauth/authorize?client_id=$global:clientId&redirect_uri=$global:RedirectUri&response_type=code&scope=$Scope"
     )
     
     # Start login
