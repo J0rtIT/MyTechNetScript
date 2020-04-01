@@ -20,11 +20,11 @@ You would need the following:
 
 It's quite easy, navigate to [https://unsplash.com](https://unsplash.com), and then click join
 
-![image](../../Images/UnsplashAPI/Join/UnsplashJoin01.png)
+![image](../../Images/UnsplashAPI/join/UnsplashJoin01.png)
 
 Then just fill out or login with facebook
 
-![image](../../Images/UnsplashAPI/Join/UnsplashJoin02.png)
+![image](../../Images/UnsplashAPI/join/UnsplashJoin02.png)
 
 ### How to create a new application on the developers site
 
