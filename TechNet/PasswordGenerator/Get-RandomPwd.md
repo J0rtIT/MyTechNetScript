@@ -21,7 +21,7 @@ As usual, will be explained as examples:
 ### Example Default parameter Long
 
 ```Powershell
-    .\Get-RandomPwd.ps1" -Long 30
+    .\Get-RandomPwd.ps1 -Long 30
 ```
 
 ### Output
@@ -36,6 +36,10 @@ rGo61m!b?5 .3ly;vs/^S OIqQHhK9CS
 **Final Passwords** </br>
 
 **-O]i:LHYPa** *.3ly;vs/^S* ^k5mJa#tp|
+
+
+![image](../../Images/PasswordGenerator/PasswordGenerator.gif)
+Full screen image can be seen [here](https://recordit.co/6NwMlDhNym)
 
 
 ## Related articles
