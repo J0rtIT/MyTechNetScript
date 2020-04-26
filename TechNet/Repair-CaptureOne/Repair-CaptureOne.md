@@ -39,9 +39,9 @@ Set-ExecutionPolicy unrestricted
 Thank you very much for downloading and please do not forget to rate, or propose if you have another idea.
 
 
-## Powershell is my hobby
+### Powershell is my hobby
 
-#Other interesting Links
+## Other interesting Links
 
 
 - If you have questions or want me to do something live, here's [my Afiliate Twitch Channel (Spanish/English)](https://twitch.tv/j0rt)
