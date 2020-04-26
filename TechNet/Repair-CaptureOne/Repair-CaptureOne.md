@@ -33,8 +33,7 @@ Set-ExecutionPolicy unrestricted
 ```Powershell
 .\Repair-CaptureOne.ps1
 ```
-
-![image](../../Images/RepairCaptureOne/Repair-Captureone.png)
+![image](../..//Images/RepairCaptureOne/Repair-CaptureOne.png)
 
 
 Thank you very much for downloading and please do not forget to rate, or propose if you have another idea.
