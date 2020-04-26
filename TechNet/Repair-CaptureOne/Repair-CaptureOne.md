@@ -37,9 +37,18 @@ Set-ExecutionPolicy unrestricted
 ![image](../../Images/RepairCaptureOne/Repair-Captureone.png)
 
 
-
 Thank you very much for downloading and please do not forget to rate, or propose if you have another idea.
 
-# Powershell is my hobby
 
-#Other interesting Scripts Links
+## Powershell is my hobby
+
+#Other interesting Links
+
+
+- If you have questions or want me to do something live, here's [my Afiliate Twitch Channel (Spanish/English)](https://twitch.tv/j0rt)
+- If you want to thank in any way you can [donate here](https://streamlabs.com/j0rt/tip) whatever you want. 
+
+# Other Interesting Script Links
+
+
+
