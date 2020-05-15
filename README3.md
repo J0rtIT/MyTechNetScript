@@ -49,4 +49,4 @@
 | 10/7/2017 | Sign-any-string-using-a2f02973_stats.csv  |  https://gallery.technet.microsoft.com/Sign-any-string-using-a2f02973  | Repository Location |  Pending|
 | 7/10/2017 | Solve-SWEET32-Birthday-d2df9cf1_stats.csv  |  https://gallery.technet.microsoft.com/Solve-SWEET32-Birthday-d2df9cf1  | Repository Location |  Pending|
 | 3/18/2015 | What-is-the-size-of-my-0e1993a7_stats.csv  |  https://gallery.technet.microsoft.com/What-is-the-size-of-my-0e1993a7  | Repository Location |  Pending|
-
+| 6/12/2019 | https://gallery.technet.microsoft.com/office/Search-if-an-SMTP-Email-b038c95c/stats | https://gallery.technet.microsoft.com/office/Search-if-an-SMTP-Email-b038c95c | Repository Location |  Pending |

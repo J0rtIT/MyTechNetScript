@@ -22,7 +22,7 @@ Set-ExecutionPolicy unrestricted
 ![image](../../Images/General/OpenPSasAdmin02.png)
 - And Accept the change.
 
-- Download the script at [clicking]
+- Download the script at [Github Repair-CaptureOne.ps1](https://github.com/j0rt3g4/MyTechNetScript/blob/master/TechNet/Repair-CaptureOne/Repair-CaptureOne.ps1)
 - Move the file into the Desktop
 - <b>Make sure you have closed Capture One software</b>
 
