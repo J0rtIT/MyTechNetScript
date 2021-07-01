@@ -1,7 +1,11 @@
 <#
+
 .Synopsis
    Enables DKIM signature in a single, multiple or all custom domains
 .DESCRIPTION
+    On V5
+    Updated the way it connects to Office 365 to support MFA and no MFA.
+
     This script connects to your Office 365 tenant, after asking for credentials, gives you the selectors you need to implement for each domain and then enables DKIM.
     The process is as follows:
     *  Ask administrative Credentials for your O365 Tenant.
@@ -18,24 +22,24 @@
     *  Finally it will use the connection to your O365 Tenant to enable DKIM on a single, multiple or all domains.
 
 .EXAMPLE
-   .\Enable-DKIMO365v4.ps1 -domain ranchosanjorge.net
+   .\Enable-DKIMO365v5.ps1 -domain ranchosanjorge.net
    This  example will provide you 2 CNAMES for the domain ranchosanjorge.net and at the end will enable DKIM on that particular domain
    
 .EXAMPLE
-   .\Enable-DKIMO365v4.ps1 -domains ranchosanjorge.net,j0rt3g4.com
+   .\Enable-DKIMO365v5.ps1 -domains ranchosanjorge.net,j0rt3g4.com
    This example will provide you 4 CNAMES (2 for each domain) to be created on your public DNS for each domain, and at the end enable DKIM on each of them.
 
 .EXAMPLE
-   .\Enable-DKIMO365v4.ps1 -domains ranchosanjorge.net
+   .\Enable-DKIMO365v5.ps1 -domains ranchosanjorge.net
    This example is just for the sake of curiosity, and yes... it's the same as the 1st example; I just wanted to let you know how you can play with the parameters.
    (This will provide you 2 CNAMES for the domain ranchosanjorge.net and at the end will enable DKIM on that particular domain)
 
 .EXAMPLE
-   .\Enable-DKIMO365v4.ps1 -all
+   .\Enable-DKIMO365v5.ps1 -all
    This example will connect to your tenant, get all the custom domains in it without DKIM ENABLED, show you the 2 CNAMEs you must add on Public DNS for all the custom domains in your tenant
    
 .EXAMPLE
-    .\Enable-DKIMO365v4.ps1 -domains hubstream.mx,j0rt3g4.com -justEnable
+    .\Enable-DKIMO365v5.ps1 -domains hubstream.mx,j0rt3g4.com -justEnable
     This example will ask for you global admin credentials and then is gonna try to Enable DKIM on both domains "Hubstream.mx" and "j0rt3g4.com". This parameter will not show you the 2 CNAMES because it will assume that you already create them.
    
 .INPUTS
@@ -83,8 +87,27 @@ param(
 #to here
 #And uncomment the 2 lines below and modify with the correct values of your domain and initialdomain (the one that ends with onmicrosoft.com)"
 Write-Host "STEP 1: " -ForegroundColor White -BackgroundColor Black -NoNewline
-Write-Host "Please provide Administrative account credentials for your Office 365 subscription (tenant)" -ForegroundColor Cyan -BackgroundColor Black
+Write-Host "Please provide a Global Administrator  credentials for your Office 365 subscription (tenant)" -ForegroundColor Cyan -BackgroundColor Black
 
+#Connect or install block
+try{
+    Connect-ExchangeOnline -ea Stop
+}
+Catch{
+    $y= Read-Host "We have discovered that you don't have the required Module Installed, would you like to install it now? (Requires that your running session to be ran as administrator) (y/n): "
+    if($y -like "*y*"){
+        Install-Module ExchangeOnlineManagement -AllowClobber -Force
+    }
+    else{
+        Write-Host "Exiting since you denieid the installation or used an invalid answer." -ForegroundColor Red
+        exit -1
+    }
+    Connect-ExchangeOnline
+}
+
+
+#Old V4 connection
+<#
 $UserCredential = Get-Credential 
 #to avoid being asked comment above line and uncomment behind with your username and password
 #$UserCredential = New-Object System.Management.Automation.PSCredential -ArgumentList "username@comain.com",("PwdinPlainText" | ConvertTo-SecureString -AsPlainText -Force)
@@ -118,6 +141,7 @@ catch{
     Write-host -ForegroundColor Yellow "There was an error while trying to connecto to the office 365, please check the administrator username and password."
     exit -1
 }
+#>
 
 if($PSCmdlet.ParameterSetName -eq "single"){
     #show CNAMES to be ADDED
